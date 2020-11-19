@@ -19,13 +19,14 @@ router.post('/new', [
     validarCampos
 ], crearUsuario );
 
+
 router.post('/', [
     check('email', 'El email es obligatorio').isEmail(),
     check('password', 'La contraseña es obligatoria').not().isEmpty(),
     validarCampos
 ], loginUsuario );
 
-// Midd validarJWT
+
 router.get('/renew', [validarJWT], renewToken);
 
 // post: /
